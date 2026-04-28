@@ -1,0 +1,7 @@
+{
+  "companyEmail": "qa.test.user@example.com",
+  "firstName": "Test",
+  "lastName": "User",
+  "password": "TestPassword123!",
+  "promoCode": "lucky_1"
+}

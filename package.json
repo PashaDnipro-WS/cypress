@@ -14,5 +14,8 @@
   "devDependencies": {
     "cypress": "^15.14.1",
     "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.15.0"
   }
 }

@@ -1,0 +1,22 @@
+[
+    {
+        "selector": "#usecase-tab-finance",
+        "title": "Secure, compliant, and built for financial scale"
+    },
+    {
+        "selector": "#usecase-tab-automotive",
+        "title": "Modernize automotive sales, service, and repairs"
+    },
+    {
+        "selector": "#usecase-tab-ecommerce",
+        "title": "Simplify returns with always-on assistance"
+    },
+    {
+        "selector": "#usecase-tab-travel",
+        "title": "Drive more bookings, 24/7/365"
+    },
+    {
+        "selector": "#usecase-tab-healthcare",
+        "title": "Reduce appointment no-shows with real-time reminders"
+    }
+]
