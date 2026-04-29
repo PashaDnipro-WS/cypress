@@ -7,6 +7,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
@@ -36,3 +41,14 @@ jobs:
         with:
           name: allure-report
           path: allure-report
+          retention-days: 7
+
+      - name: Upload Allure report to GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        if: always()
+        uses: actions/deploy-pages@v4
