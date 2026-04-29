@@ -8,7 +8,10 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:allure": "cypress run --env allure=true",
+    
+    "cy:ci": "cypress run --config-file cypress.ci.config.js",
     "allure:report": "allure generate allure-results --clean -o allure-report",
+
     "allure:open": "allure open",
     "cy:telnyx": "cypress run --env allure=true --spec cypress/e2e/intern/telnyx.cy.js",
     "allure:clear": "rimraf allure-results allure-report cypress/screenshots cypress/videos",
