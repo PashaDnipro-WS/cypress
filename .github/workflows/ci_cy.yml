@@ -52,3 +52,11 @@ jobs:
       - name: Deploy Allure report to GitHub Pages
         if: always()
         uses: actions/deploy-pages@v4
+
+      - name: Add Allure link to Summary
+        if: always()
+        run: |
+          echo "## Reports" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Allure Report: https://pashadnipro-ws.github.io/cypress/" >> $GITHUB_STEP_SUMMARY
+          echo "- Cypress Cloud: available in run summary above" >> $GITHUB_STEP_SUMMARY
