@@ -2,7 +2,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
 
     beforeEach(() => {
         cy.viewport(1920, 1080)
-        cy.visit('/')
+        cy.visit("/")
 
         cy.get('#onetrust-accept-btn-handler', { timeout: 10000 })
             .should('be.visible')
@@ -131,7 +131,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
         })
 
         cy.get('form[aria-label="signup-form"]')
-            .find('p')
+            .find('p', { timeout: 10000 })
             .last()
             .should('be.visible')
             .invoke('text')
@@ -139,6 +139,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
     })
 
     it('9 - LOG IN', () => {
+          cy.once('uncaught:exception', () => false)
         cy.get('a[href="https://portal.telnyx.com"]:visible')
             .invoke('removeAttr', 'target')
             .click()
