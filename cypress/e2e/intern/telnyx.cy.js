@@ -1,4 +1,4 @@
-describe('internship task1 - cypress: testing of site telnyx', () => {
+describe('Telnyx Website UI Interaction Tests', () => {
 
     beforeEach(() => {
         cy.viewport(1920, 1080)
@@ -9,7 +9,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             .click()
     })
 
-    it('1 - nav bar: solutions', () => {
+    it('should display solution category cards in Solutions dropdown menu', () => {
         cy.contains('Solutions')
             .should('be.visible')
             .and('not.be.disabled')
@@ -27,11 +27,11 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             })
     })
 
-    it('2 - animation', () => {
+    it('should trigger animation after scrolling to section', () => {
         cy.checkAnimationAfterScroll('[aria-hidden="true"][style*="rotate"]')
     })
 
-    it('3 - animation "6-9"', () => {
+    it('should display Agent Execution & Memory content after selection', () => {
         cy.checkAnimationAfterScroll('[aria-hidden="true"][style*="rotate"]')
         cy.contains('button', 'Agent Execution & Memory')
             .should('be.visible')
@@ -58,7 +58,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
 
     })
 
-    it('4 - AGENT RUNTIME: focused models', () => {
+    it('should activate selected model in Agent Runtime section', () => {
         cy.contains('AGENT RUNTIME').scrollIntoView()
             .should('be.visible')
         cy.get('[type = "button"][aria-pressed]')
@@ -71,7 +71,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             })
     })
 
-    it('4.1 - Voice Agent Builder: circles', () => {
+    it('should activate circles in Voice Agent Builder', () => {
         cy.contains('Voice Agent Builder')
             .scrollIntoView()
             .should('be.visible')
@@ -89,7 +89,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             })
     })
 
-    it('5 - AGENT RUNTIME: select language', () => {
+    it('should allow selecting language from dropdown', () => {
         cy.get('[aria-label="Select language"]')
             .scrollIntoView()
             .should('be.visible')
@@ -103,7 +103,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
 
     })
 
-    it('6 - AGENT RUNTIME: input field', () => {
+    it('should send message and display chat response', () => {
         cy.get('input[type="text"]')
             .type('I test u')
 
@@ -116,7 +116,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             .should('have.length.greaterThan', 10)
     })
 
-    it('8 - SIGN UP', () => {
+    it('should submit Sign Up form with not valid test data', () => {
         cy.contains('Sign up')
             .click()
         cy.contains('Create your account')
@@ -138,7 +138,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             .should('have.length.greaterThan', 10)
     })
 
-    it('9 - LOG IN', () => {
+    it('should navigate to Log In page and enter email', () => {
           cy.once('uncaught:exception', () => false)
         cy.get('a[href="https://portal.telnyx.com"]:visible')
             .invoke('removeAttr', 'target')
@@ -153,7 +153,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
         })
     })
 
-    it('10 - down button', () => {
+    it('should open floating chat widget and display response', () => {
         cy.get('button[class*="rounded-full"]', { includeShadowDom: true })
             .click()
         cy.get('#user-message-input', { includeShadowDom: true })
@@ -168,7 +168,7 @@ describe('internship task1 - cypress: testing of site telnyx', () => {
             .should('have.length.greaterThan', 10)
     })
 
-    it('7 - Ask AI: ChatGPT', () => {
+    it('should contain valid ChatGPT external link', () => {
         cy.get('[alt="GPT"]')
             .parent('a')
             .should('have.attr', 'href')

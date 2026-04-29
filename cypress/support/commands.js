@@ -24,12 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (email, password) => {
-   cy.visit('/Identity/Account/Login')
-   cy.get('#Input_Email').type(email)
-   cy.get('#Input_Password').type(password)
-   cy.get('#login-submit').click()
-})
 
 Cypress.Commands.add('checkAnimationAfterScroll', (selector, scrollY = 1600) => {
   cy.get(selector)
