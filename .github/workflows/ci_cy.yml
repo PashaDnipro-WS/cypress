@@ -34,15 +34,7 @@ jobs:
       - name: Generate Allure report
         if: always()
         run: npm run allure:report
-
-      - name: Upload Allure report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report
-          retention-days: 7
-
+        
       - name: Upload Allure report to GitHub Pages
         if: always()
         uses: actions/upload-pages-artifact@v3
